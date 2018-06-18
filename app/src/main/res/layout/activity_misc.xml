@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrawableRes.SelectorActivity"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
+    <TextView
+        android:id="@+id/txv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XML Bitmap:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imv1" />
+
+    <ImageView
+        android:id="@+id/imv1"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/mybitmap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv1" />
+
+    <TextView
+        android:id="@+id/txv2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="XML NinePatch:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imv1"
+        app:layout_constraintTop_toBottomOf="@+id/imv1" />
+
+    <ImageView
+        android:id="@+id/imv2"
+        android:layout_width="124dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toEndOf="@+id/imv3"
+        app:layout_constraintTop_toBottomOf="@+id/txv2" />
+
+    <ImageView
+        android:id="@+id/imv3"
+        android:layout_width="119dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        app:srcCompat="@drawable/myninepatch"
+        app:layout_constraintStart_toStartOf="@+id/txv2"
+        app:layout_constraintTop_toBottomOf="@+id/txv2" />
+
+    <TextView
+        android:id="@+id/txv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/mycolor"
+        android:text="in xml:res/drawable/color"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imv2" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="in java:res/drawable/color"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/txv3"
+        app:layout_constraintTop_toBottomOf="@+id/txv3" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@+id/btn" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/myripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="RippleDrawable" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/framelayout_bg_shape" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txv6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Ripple With Selector"
+                android:textColor="@color/c_yellow" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/framelayout_bg_shape" />
+        </FrameLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
+    </ScrollView>

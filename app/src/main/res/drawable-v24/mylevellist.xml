@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 值为0~5时显示的图片 -->
+    <item
+        android:minLevel="0"
+        android:maxLevel="4"
+        android:drawable="@drawable/wifi0" />
+
+    <!-- 值为6~10时显示的图片 -->
+    <item
+        android:minLevel="5"
+        android:maxLevel="9"
+        android:drawable="@drawable/wifi1" />
+
+    <!-- 值为11~15时显示的图片 -->
+    <item
+        android:minLevel="10"
+        android:maxLevel="14"
+        android:drawable="@drawable/wifi2" />
+
+    <!-- 值为16~20时显示的图片 -->
+    <item
+        android:minLevel="15"
+        android:maxLevel="19"
+        android:drawable="@drawable/wifi3" />
+</level-list>

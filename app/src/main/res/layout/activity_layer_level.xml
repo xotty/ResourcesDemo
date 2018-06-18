@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="5dp">
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="LayerDrawable:"
+		android:textAllCaps="false"
+		android:textSize="18sp"/>
+	<ImageView
+		android:id="@+id/imv_photo_frame"
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:layout_gravity="center_horizontal"
+		android:src="@drawable/mylayerlist"/>
+	<Button
+		android:id="@+id/btn_change_photo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:text="更换相片(layer-list)"
+		android:textAllCaps="false"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="LevelListDrawable:"
+		android:textAllCaps="false"
+		android:textSize="18sp"/>
+
+	<ImageView
+		android:id="@+id/imv_wifi"
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:layout_gravity="center_horizontal"
+		android:src="@drawable/mylevellist"/>
+	<Button
+		android:id="@+id/btn_change_level"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:text="变更信号强度(level-list)"
+		android:textAllCaps="false"/>
+</LinearLayout>

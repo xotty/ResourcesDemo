@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.xottys.ResourcesDemo.MainActivity">
+    <item
+        android:id="@id/drawble_demo"
+        android:title="@string/drawable_demo" />
+    <item
+        android:id="@id/raw_demo"
+        android:title="@string/raw_demo" />
+    <item
+        android:id="@id/animation_demo"
+        android:title="@string/anim_demo" />
+</menu>

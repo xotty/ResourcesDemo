@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionManager xmlns:android="http://schemas.android.com/apk/res/android">
+    <transition
+        android:fromScene="@layout/scene_1_changeimagetransform"
+        android:toScene="@layout/scene_2_changeimagetransform"
+        android:transition="@transition/my_changeimagetransform" />
+    <transition
+        android:fromScene="@layout/scene_2_changeimagetransform"
+        android:toScene="@layout/scene_1_changeimagetransform"
+        android:transition="@transition/my_changeimagetransform" />
+    <transition
+        android:fromScene="@layout/scene_1_changetransform"
+        android:toScene="@layout/scene_2_changetransform"
+        android:transition="@transition/my_changetransform" />
+    <transition
+        android:fromScene="@layout/scene_2_changetransform"
+        android:toScene="@layout/scene_1_changetransform"
+        android:transition="@transition/my_changetransform" />
+</transitionManager>
+

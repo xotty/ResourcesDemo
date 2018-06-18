@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="res/values    res/color    res/xml\nres/layout    res/menu    res/mipmap"
+            android:textSize="@dimen/text_size_small" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/txv_string"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="String:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_string"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="@string/string_xml"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_integer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Integer:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_integer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="@integer/max_speed"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_bool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bool:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_bool"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="@bool/bool_xml"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_color"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="字体颜色"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_dimension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dimension:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_dimension"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="字体大小"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_array"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Array:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <!--指定显示该Spinner组件的数组 -->
+            <Spinner
+                android:id="@+id/spn_array"
+                android:layout_width="@dimen/button_width_small"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:entries="@array/planets"
+                android:popupBackground="@drawable/d_yellow"
+                android:prompt="@string/spinner_planet_prompt" />
+
+            <Button
+                android:id="@+id/btn_array"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/large_margin"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="xml->code"
+                android:textAllCaps="false"
+                android:textColor="@color/c_yellow"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_attr_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attr/Style:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <!--指定显示该Spinner组件的数组 -->
+            <!--可以用style="@style/pie_para"代替app自定义属性值 -->
+            <org.xottys.ResourcesDemo.PieView
+                android:id="@+id/pieview_attr_style"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:mColor="@color/c_red"
+                app:mPercent="0.6" />
+            <!--?attr/属性名字只有在theme中被赋值才有效-->
+            <Button
+                android:id="@+id/btn_attr_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/text_margin_small"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="xml->code"
+                android:textAllCaps="false"
+                android:textColor="?attr/mColor"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txv_xml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XML:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_xml"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="Read XML"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrawableRes.DrawableWrapperActivity"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
+    <TextView
+        android:id="@+id/txv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scale:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/img1" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txv1"
+        app:srcCompat="@drawable/wrapper_img1" />
+
+    <TextView
+        android:id="@+id/txv2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="Rotate:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/img1" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toEndOf="@+id/img3"
+        app:layout_constraintTop_toBottomOf="@+id/txv2"
+        app:srcCompat="@drawable/wrapper_img2" />
+
+
+    <TextView
+        android:id="@+id/txv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Clip:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/txv2"
+        app:layout_constraintTop_toBottomOf="@+id/img2" />
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="@+id/txv3"
+        app:layout_constraintTop_toBottomOf="@+id/txv3"
+        app:srcCompat="@drawable/wrapper_img3" />
+    <TextView
+        android:id="@+id/txv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Inset:"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/img3"
+        app:layout_constraintTop_toBottomOf="@+id/img3" />
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="@+id/txv4"
+        app:layout_constraintTop_toBottomOf="@+id/txv4"
+        app:srcCompat="@drawable/wrapper_img4" />
+
+</android.support.constraint.ConstraintLayout>

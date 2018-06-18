@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <attr name="mPercent" format="float"/>
+    <attr name="mColor" format="color|reference"/>
+
+    <declare-styleable name="pieView">
+        <attr name="mPercent" />
+        <attr name="mColor" />
+    </declare-styleable>
+    <!-- These are attributes used with 'DraggableDot' drawables in
+         view/DragAndDropActivity.java and view/DraggableDot.java -->
+    <declare-styleable name="DraggableDot">
+        <attr name="radius" format="dimension" />
+        <attr name="legend" format="string" />
+        <attr name="anr">
+            <enum name="none" value="0" />
+            <enum name="thumbnail" value="1" />
+            <enum name="drop" value="2" />
+        </attr>
+        <attr name="textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+
+    </declare-styleable>
+
+    <!-- These are the attributes that we want to retrieve for
+         app/FragmentArguments.java -->
+
+    <declare-styleable name="FragmentArguments">
+        <attr name="android:label" />
+    </declare-styleable>
+
+</resources>

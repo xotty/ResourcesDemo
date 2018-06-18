@@ -1,0 +1,3 @@
+Nokia Font GuYin英文字体演示如下
+This text is stored in a raw Asset.
+It was read and placed into the TextView here.

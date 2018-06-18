@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/alpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="alpha"
+        android:textColor="@color/colorAccent" />
+
+
+    <Button
+        android:id="@+id/translate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="translate"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/scale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="scale"
+        android:textColor="@color/colorAccent" />
+
+
+    <Button
+        android:id="@+id/rotate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rotate"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AnimSet"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/myView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Animation Image"
+        android:gravity="center"
+        android:src="@drawable/scene" />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Cancel Animation"
+        android:textColor="@color/colorPrimary" />
+</LinearLayout>

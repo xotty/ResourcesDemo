@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="planets">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Pluto</item>
+    </string-array>
+
+    <integer-array name="SCMBit">
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
+    </integer-array>
+
+    <!--<array name="icons">-->
+        <!--<item>@drawable/home</item>-->
+        <!--<item>@drawable/settings</item>-->
+        <!--<item>@drawable/logout</item>-->
+    <!--</array>-->
+</resources>

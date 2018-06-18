@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.xottys.ResourcesDemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RawActivity"
+            android:label="@string/title_activity_raw"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DrawableRes.DrawableMainActivity"
+            android:theme="@style/AppTheme2"
+            android:label="@string/title_activity_drawable">
+        </activity>
+        <activity android:name=".DrawableRes.SelectorActivity"
+            android:label="Selector:StateListDrawable"/>
+        <activity android:name=".DrawableRes.MiscActivity"
+            android:label="Misc:Bitmap/NinePatch/Color"/>
+        <activity android:name=".DrawableRes.ShapeActivity"
+            android:label="Shape:GradientDrawable"/>
+        <activity android:name=".DrawableRes.LayerLevelActivity"
+            android:label="LayerDrawable/LevelListDrawable"/>
+        <activity android:name=".DrawableRes.DrawableWrapperActivity"
+            android:label="DrawableWrapper"/>
+        <activity android:name=".DrawableRes.VectorActivity"
+            android:label="VectorDrawable"/>
+        <activity android:name=".DrawableRes.AnimationActivity"
+            android:label="Animation:xxxDrawable"/>
+
+        <activity android:name=".AnimRes.AnimMainActivity"
+            android:theme="@style/AppTheme2"
+            android:label="Animation Resources"/>
+
+
+        <activity android:name=".AnimRes.AnimActivity"
+            android:label="anim"/>
+        <activity android:name=".AnimRes.LayoutAnimActivity"
+            android:label="layoutAnimation/gridLayoutAnimation"/>
+        <activity android:name=".AnimRes.AnimatorActivity"
+            android:label="animator"/>
+        <activity android:name=".AnimRes.TransitionActivity"
+            android:label="transition"/>
+        <activity android:name=".AnimRes.TransitionDetailsActivity"
+            android:label="transition"/>
+        <activity android:name=".AnimRes.TransitionManagerActivity"
+            android:label="transitionManager"/>
+    </application>
+
+</manifest>

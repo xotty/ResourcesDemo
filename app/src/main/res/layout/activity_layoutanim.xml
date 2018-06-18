@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animationCache="false"
+        android:clipToPadding="false"
+        android:padding="12dp"
+        android:stretchColumns="1">
+
+        <TableRow android:layoutAnimation="@anim/my_layoutanimation3">
+
+            <TextView
+                android:gravity="right"
+                android:text="@string/layout_animation_name" />
+
+            <EditText />
+        </TableRow>
+
+        <TableRow android:layoutAnimation="@anim/my_layoutanimation2">
+
+            <TextView
+                android:gravity="right"
+                android:text="@string/layout_animation_lastname" />
+
+            <EditText />
+        </TableRow>
+
+        <TableRow android:layoutAnimation="@anim/my_layoutanimation3">
+
+            <TextView
+                android:gravity="right"
+                android:text="@string/layout_animation_phone" />
+
+            <EditText />
+        </TableRow>
+
+        <TableRow android:id="@+id/line5">
+
+            <TextView
+                android:gravity="right"
+                android:text="@string/layout_animation_address" />
+
+            <EditText android:lines="2" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/btn_loadapps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Load App Icon"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimary" />
+    <GridView
+        android:id="@+id/grid"
+        android:layoutAnimation="@anim/my_gridlayoutanimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:columnWidth="60dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center" />
+
+</LinearLayout>

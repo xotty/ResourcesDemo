@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--相框-->
+    <item
+        android:drawable="@drawable/photo_frame"/>
+    <!--照片-->
+    <item
+        android:id="@+id/layer_photo"
+        android:top="100dp"
+        android:left="180dp"
+        android:right="180dp"
+        android:bottom="100dp"
+        android:drawable="@drawable/image_one"/>
+</layer-list>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ResourcesDemo</string>
+    <string name="string_xml">String XML </string>
+    <string name="string_code">String Code</string>
+
+    <string name="raw_demo">Raw Res</string>
+    <string name="drawable_demo">Drawable Res</string>
+    <string name="anim_demo">Animation Res</string>
+    <string name="attr_style_demo">Attr/Styles Res</string>
+
+    <string name="spinner_planet_prompt">Choose a planet</string>
+    <string name="title_activity_raw">assets AND res/raw</string>
+    <string name="title_activity_drawable">res/drawable</string>
+
+    <string name="layout_animation_name">Name:</string>
+    <string name="layout_animation_lastname">Last Name:</string>
+    <string name="layout_animation_phone">Phone:</string>
+    <string name="layout_animation_address">Address:</string>
+
+    <string name="square_blue_name">square_blue</string>
+</resources>
