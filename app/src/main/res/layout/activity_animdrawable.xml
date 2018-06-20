@@ -70,5 +70,21 @@
         android:contentDescription="AnimatedStateListDrawable"
         android:onClick="onTwitterClick"
         android:src="@drawable/myanimatedselector" />
+    <TextView
+        android:id="@+id/txv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="AnimatedRotateDrawable:"
+        android:textAllCaps="false"
+        android:textSize="18sp"/>
+    <ImageView
+        android:id="@+id/imv5"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="AnimatedRotateDrawable"
+        android:onClick="onTwitterClick"
+        android:src="@drawable/myanimatedrotate" />
 </LinearLayout>
 </ScrollView>
