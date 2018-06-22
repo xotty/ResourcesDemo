@@ -18,4 +18,6 @@
     <string name="layout_animation_address">Address:</string>
 
     <string name="square_blue_name">square_blue</string>
+
+    <string name="earth">Earth</string>
 </resources>

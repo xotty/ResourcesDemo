@@ -10,7 +10,7 @@
  * 1.6）ids.xml:<item type="id" name="xxx"/>
  * 1.7）arrays.xml:<string-array name="xxx"> <item>String Value</item> </string-array>
  *                <integer-array name="xxx"> <item>Integer Value</item> </integer-array>
- *
+ *                <array name="xxx"> <item>Reference Value</item> </array>
  * 1.8) attrs.xml: <declare-styleable name="xxx1">
                         <attr name="xxx2" format="yyy"/>
                         <attr name="xxx3">
@@ -66,36 +66,80 @@
 package org.xottys.ResourcesDemo;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xottys.ResourcesDemo.AnimRes.AnimMainActivity;
 import org.xottys.ResourcesDemo.DrawableRes.DrawableMainActivity;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "resources";
-
+    ImageView imv;
+    private Drawable[] drawables;
+    private int change = 0,pictureCount;
+    private Handler mHandler = new MainHandler(this);
+    private boolean isTimerRunning=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         //加载Layout
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        imv =  findViewById(R.id.imv);
+
+
+        LinearLayout lnlString=findViewById(R.id.lnl_string);
+        TextView txvString=lnlString.findViewById(R.id.txv);
+        txvString.setText("String:");
+        Button btnString=lnlString.findViewById(R.id.btn);
+        btnString.setText(getText(R.string.string_xml));
+        btnString.setId(R.id.btn_string);
+
+        LinearLayout lnlInteger=findViewById(R.id.lnl_integer);
+        TextView txvInteger=lnlInteger.findViewById(R.id.txv);
+        txvInteger.setText("Integer:");
+        Button btnInteger=lnlInteger.findViewById(R.id.btn);
+        btnInteger.setText(""+getResources().getInteger(R.integer.max_speed));
+        btnInteger.setId(R.id.btn_integer);
+
+        //将arrays.xml 中的drawable放入数组drawables
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.scenes);
+        pictureCount=typedArray.length();
+        drawables=new Drawable[pictureCount];
+        for (int i = 0; i < pictureCount; i++) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+                drawables[i] = getDrawable(typedArray.getResourceId(i ,R.drawable.wrapper_img1 ));
+            } else {
+                drawables[i] = getResources().getDrawable(typedArray.getResourceId(i ,R.drawable.wrapper_img1 ),null);
+            }
+        }
     }
 
     //加载定义的Menu
@@ -129,6 +173,11 @@ public class MainActivity extends AppCompatActivity {
         switch (btn.getId()) {
             case R.id.btn_string:
                 ((Button) btn).setText(getResources().getString(R.string.string_code));
+
+                /*可替代实现方式
+                ((Button) btn).setText(getString(R.string.string_code));
+                ((Button) btn).setText(getText(R.string.string_code));*/
+
                 break;
             case R.id.btn_integer:
                 ((Button) btn).setText("" + getResources().getInteger(R.integer.min_speed));
@@ -138,8 +187,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_color:
                 //字体颜色由xml中的ColorStateList控制，背景颜色在这里用代码控制
-                btn.setBackground(getResources().getDrawable(R.drawable.d_grey));
-                //((Button)btn).setBackgroundColor(getResources().getColor(R.color.c_grey));
+
+                btn.setBackground(getResources().getDrawable(R.drawable.d_grey, null));
+                /*可替代实现方式
+                   btn.setBackground(getDrawable(R.drawable.d_grey));
+                   或者
+                   ((Button)btn).setBackgroundColor(getResources().getColor(R.color.c_grey));*/
+
                 /*这是用代码加载xml中的ColorStateList的方法
                 ColorStateList csl=(ColorStateList)getResources().getColorStateList(R.color.my_colorstatelist);*/
                 break;
@@ -174,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                 TypedArray styledAttributes = obtainStyledAttributes(R.style.pie_para, R.styleable.pieView);
                 */
                 int color = styledAttributes.getColor(0, 0xffa4d5e6);
-                float percent = styledAttributes.getFloat(1+0, 0.75f);
+                float percent = styledAttributes.getFloat(1 + 0, 0.75f);
                 //自定义PieView中使用自定义属性
                 PieView pieView = findViewById(R.id.pieview_attr_style);
                 pieView.setOvalColor(color);
@@ -204,6 +258,50 @@ public class MainActivity extends AppCompatActivity {
                     e2.printStackTrace();
                 }
                 break;
+            case R.id.imv:
+                if(!isTimerRunning)
+                   timer.start();
+                break;
         }
     }
+
+        //使用内部静态类Handler以避免内存泄漏
+        private static class MainHandler extends Handler {
+            //持有弱引用HandlerDemo Activity,GC回收时会被回收掉.
+            WeakReference<MainActivity> mActivty;
+
+            private MainHandler(MainActivity activity) {
+                mActivty = new WeakReference<>(activity);
+            }
+
+            //不断刷新TransitionDrawable的内容
+            @Override
+            public void handleMessage(Message msg) {
+               MainActivity mainActivity = mActivty.get();
+                super.handleMessage(msg);
+               TransitionDrawable transitionDrawable = new TransitionDrawable(new Drawable[]{mainActivity.drawables[mainActivity.change % mainActivity.pictureCount],
+                       mainActivity.drawables[(mainActivity.change + 1) % mainActivity.pictureCount]});
+                mainActivity.change++;//改变标识位置
+                mainActivity.imv.setImageDrawable(transitionDrawable);
+                transitionDrawable.startTransition(3000);
+            }
+        }
+
+    //倒数计时器：10000ms总时长，2000ms变化一次
+    private CountDownTimer timer = new CountDownTimer(10000, 2000) {
+        //每次变化时调用，调用Handler处理方法
+        @Override
+        public void onTick(long millisUntilFinished) {
+            isTimerRunning=true;
+            mHandler.sendEmptyMessage(0);
+        }
+
+        //倒计时结束时调用
+        @Override
+        public void onFinish() {
+            isTimerRunning=false;
+
+        }
+
+    };
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/txv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="String:"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/d_blue"
+        android:onClick="clickButton"
+        android:text="@string/string_xml"
+        android:textAllCaps="false"
+        android:textColor="@color/my_colorstatelist"
+        android:textSize="@dimen/text_size_normal" />
+</merge>

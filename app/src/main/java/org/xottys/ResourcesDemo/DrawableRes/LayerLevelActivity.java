@@ -69,8 +69,8 @@ public class LayerLevelActivity extends AppCompatActivity {
         // 获取替换的图片
         if(currentid==drawableIDs.length-1) currentid=0;
         else currentid++;
-        LayerDrawable layerDrawable = (LayerDrawable) getResources().getDrawable( R.drawable.mylayerlist);
-        Drawable drawable = getResources().getDrawable( drawableIDs[currentid]);
+        LayerDrawable layerDrawable = (LayerDrawable) getDrawable( R.drawable.mylayerlist);
+        Drawable drawable = getDrawable( drawableIDs[currentid]);
         // 找到layer_drawable布局中需要更换的item，并替换成对应的图片
         layerDrawable.setDrawableByLayerId(R.id.layer_photo, drawable);
         mPhoto.setImageDrawable(layerDrawable);

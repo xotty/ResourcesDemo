@@ -9,8 +9,8 @@
         <attr name="mPercent" />
         <attr name="mColor" />
     </declare-styleable>
-    <!-- These are attributes used with 'DraggableDot' drawables in
-         view/DragAndDropActivity.java and view/DraggableDot.java -->
+
+
     <declare-styleable name="DraggableDot">
         <attr name="radius" format="dimension" />
         <attr name="legend" format="string" />
@@ -24,7 +24,6 @@
             <flag name="bold" value="1" />
             <flag name="italic" value="2" />
         </attr>
-
     </declare-styleable>
 
     <!-- These are the attributes that we want to retrieve for

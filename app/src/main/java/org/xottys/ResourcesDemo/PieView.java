@@ -88,7 +88,7 @@ public class PieView extends View {
             TypedArray styledAttributes = ctx.obtainStyledAttributes(attrs, R.styleable.pieView);
             */
             ovalColor = styledAttributes.getColor(0, 0xffa4d5e6);
-            ovalPercent = styledAttributes.getFloat(1, 0.75f);
+            ovalPercent = styledAttributes.getFloat(0+1, 0.75f);
 
             /*仅适用xml中直接使用自定义属性
             //获取AttributeSet中所有的XML属性的数量
