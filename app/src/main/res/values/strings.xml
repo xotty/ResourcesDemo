@@ -13,11 +13,18 @@
     <string name="title_activity_drawable">res/drawable</string>
 
     <string name="layout_animation_name">Name:</string>
+
     <string name="layout_animation_lastname">Last Name:</string>
     <string name="layout_animation_phone">Phone:</string>
+
+
     <string name="layout_animation_address">Address:</string>
 
     <string name="square_blue_name">square_blue</string>
 
     <string name="earth">Earth</string>
+
+    <string name="font_text1">方正彩云字体\nThis font is stored in res/font</string>
+    <string name="font_text2">方正流行字体\nThis font is stored in res/font</string>
+
 </resources>

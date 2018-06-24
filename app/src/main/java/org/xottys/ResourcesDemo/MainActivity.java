@@ -68,6 +68,7 @@ package org.xottys.ResourcesDemo;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Build;
@@ -79,7 +80,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -257,6 +257,12 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e2) {
                     e2.printStackTrace();
                 }
+                break;
+            case R.id.btn_font:
+                 //给Textview设置字体
+                 Typeface typeface = getResources().getFont(R.font.myfont);
+                 ((Button)findViewById(R.id.btn_font)).setTypeface(typeface);
+                ((Button)findViewById(R.id.btn_font)).setText(R.string.font_text2);
                 break;
             case R.id.imv:
                 if(!isTimerRunning)
