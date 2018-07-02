@@ -3,5 +3,6 @@
     android:color="#FF0000">
     <item
         android:id="@android:id/mask"
-        android:drawable="@color/c_green" />
+        android:drawable="@color/c_green"
+        />
 </ripple>

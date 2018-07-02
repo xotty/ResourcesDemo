@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ResourcesDemo</string>
+    <string name="app_name">Resources</string>
     <string name="string_xml">String XML </string>
     <string name="string_code">String Code</string>
 

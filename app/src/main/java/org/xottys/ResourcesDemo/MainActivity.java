@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
                  //给Textview设置字体
                  Typeface typeface = getResources().getFont(R.font.myfont);
                  ((Button)findViewById(R.id.btn_font)).setTypeface(typeface);
-                ((Button)findViewById(R.id.btn_font)).setText(R.string.font_text2);
+                 ((Button)findViewById(R.id.btn_font)).setText(R.string.font_text2);
                 break;
             case R.id.imv:
                 if(!isTimerRunning)

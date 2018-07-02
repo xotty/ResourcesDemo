@@ -26,7 +26,9 @@
  */
 package org.xottys.ResourcesDemo.DrawableRes;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
@@ -45,7 +47,7 @@ public class MiscActivity extends AppCompatActivity {
         ImageView imageView=findViewById(R.id.imv2);
         Button btn=findViewById(R.id.btn);
         TextView txv2=findViewById(R.id.txv2);
-
+        ImageView vw=findViewById(R.id.imv1);
         /*用代码加载xml版Bitmap
         ImageView imageView=findViewById(R.id.imv1);
         BitmapDrawable bitmapDrawable = (BitmapDrawable)getResources().getDrawable(R.drawable.mybitmap);
@@ -66,13 +68,13 @@ public class MiscActivity extends AppCompatActivity {
         //代码生成ColorDrawable
         ColorDrawable colorDrawable1 = new ColorDrawable(0xffffff00);
         //代码加载ColorDrawable
-        ColorDrawable colorDrawable2 = (ColorDrawable) getResources().getDrawable(R.drawable.mycolor);
+        ColorDrawable colorDrawable2 = (ColorDrawable) getResources().getDrawable(R.drawable.mycolor,null);
 
         btn.setBackground(colorDrawable2);
         txv2.setBackground(colorDrawable1);
 
         //RippleDrawable演示，代码加载
-        RippleDrawable rippleDrawable=(RippleDrawable) getResources().getDrawable(R.drawable.myripple_selector);
+        RippleDrawable rippleDrawable=(RippleDrawable) getResources().getDrawable(R.drawable.myripple_selector,null);
         TextView txv = findViewById(R.id.txv6);
         txv.setBackground(rippleDrawable);
     }

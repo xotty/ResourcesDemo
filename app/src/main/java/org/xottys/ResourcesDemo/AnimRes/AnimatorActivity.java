@@ -30,6 +30,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -147,7 +148,8 @@ public class AnimatorActivity extends AppCompatActivity implements OnClickListen
         anim = (ObjectAnimator) AnimatorInflater.loadAnimator(this, R.animator.my_translation);
         //设定动画对象
         anim.setTarget(myView);
-
+        //设置系统插值器
+        anim.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.fast_out_linear_in));
         //补充设定动画属性
         anim.setRepeatMode(ObjectAnimator.REVERSE);
         //启动动画

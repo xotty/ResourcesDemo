@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import org.xottys.ResourcesDemo.R;
@@ -54,19 +55,22 @@ public class AnimActivity extends AppCompatActivity implements OnClickListener {
         switch (v.getId()) {
             case R.id.set:
                 //加载动画集合
-                myAnimation = AnimationUtils.loadAnimation(this, R.anim.my_animset);
+                AnimationSet myAnimationSet = (AnimationSet)AnimationUtils.loadAnimation(this, R.anim.my_animset);
                 //启动动画
-                myView.startAnimation(myAnimation);
+                myView.startAnimation(myAnimationSet);
                 break;
             case R.id.alpha:
                 //加载动画
                 myAnimation = AnimationUtils.loadAnimation(this, R.anim.my_alpha);
+
                 //启动动画
                 myView.startAnimation(myAnimation);
                 break;
             case R.id.translate:
                 //加载动画
                 myAnimation = AnimationUtils.loadAnimation(this, R.anim.my_transplate);
+                //设置插值器
+                myAnimation.setInterpolator(this,R.anim.my_interpolator);
                 //补充定义动画属性
                 myAnimation.setRepeatCount(-1);
                 //启动动画
@@ -75,12 +79,15 @@ public class AnimActivity extends AppCompatActivity implements OnClickListener {
             case R.id.scale:
                 //加载动画
                 myAnimation = AnimationUtils.loadAnimation(this, R.anim.my_scale);
+                myAnimation.setInterpolator(this,R.anim.cycle_interpolator_3);
                 //启动动画
                 myView.startAnimation(myAnimation);
                 break;
             case R.id.rotate:
                 //加载动画
                 myAnimation = AnimationUtils.loadAnimation(this, R.anim.my_rotate);
+                //设置插值器
+                myAnimation.setInterpolator(this,android.R.interpolator.fast_out_slow_in);
                 //启动动画
                 myView.startAnimation(myAnimation);
                 break;

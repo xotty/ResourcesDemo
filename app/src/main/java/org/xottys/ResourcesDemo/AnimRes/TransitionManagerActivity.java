@@ -34,9 +34,11 @@ import android.transition.Scene;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
+import android.transition.TransitionSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -136,11 +138,14 @@ public class TransitionManagerActivity extends AppCompatActivity implements View
     @Override
     public void onClick(View v) {
         //加载TransitionSet
-        Transition transitionSet = TransitionInflater.from(this).inflateTransition(R.transition.my_transitionset);
+        TransitionSet transitionSet = (TransitionSet)TransitionInflater.from(this).inflateTransition(R.transition.my_transitionset);
+        //设置插值器
+        transitionSet.setInterpolator(AnimationUtils.loadInterpolator(this,android.R.interpolator.accelerate_quad));
         //动画转换延迟启动，从mSceneRoot当前状态使用动画过渡到下面的状态
         TransitionManager.beginDelayedTransition(mSceneRoot, transitionSet);
         //改变其中元素的位置、大小和可见性
         changeScene(v);
+
     }
 
     //设置所有初始场景为Scene1
@@ -164,7 +169,6 @@ public class TransitionManagerActivity extends AppCompatActivity implements View
             isScene2[group] = false;
         }
     }
-
 
     private void switchScene(Transition transition, int group) {
         switch (group) {

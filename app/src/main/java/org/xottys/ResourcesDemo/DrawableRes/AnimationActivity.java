@@ -65,18 +65,14 @@ public class AnimationActivity extends AppCompatActivity {
         AnimationDrawable animationDrawable = (AnimationDrawable) iv1.getDrawable();
         ////AnimationDrawable启动
         animationDrawable.start();
-
         //TransitionDrawable演示
         iv2 = findViewById(R.id.imv2);
         transitionDrawable = (TransitionDrawable) iv2.getDrawable();
-
         //AnimatedVectorDrawable演示
         iv3 = findViewById(R.id.imv3);
 
         //AnimatedStateListDrawable演示
         iv4 = findViewById(R.id.imv4);
-
-
     }
 
     //transitionDrawable启动

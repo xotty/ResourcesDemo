@@ -89,6 +89,8 @@ public class DrawableWrapperActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 imv2.setImageDrawable(getDrawable(R.drawable.myrotate));
+                /*可选替代
+                imv2.setImageResource(R.drawable.myrotate);*/
                 drawable = imv2.getDrawable();
                 changeImg();
             }

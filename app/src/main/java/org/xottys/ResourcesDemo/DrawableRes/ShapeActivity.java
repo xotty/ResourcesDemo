@@ -41,7 +41,7 @@ public class ShapeActivity extends AppCompatActivity {
 
         //代码加载xml版的GradientDrawable
         TextView txv=findViewById(R.id.txv);
-        GradientDrawable gradientDrawable=(GradientDrawable)getResources().getDrawable(R.drawable.shape_circle);
+        GradientDrawable gradientDrawable=(GradientDrawable)getDrawable(R.drawable.shape_circle);
         txv.setBackground(gradientDrawable);
     }
 }

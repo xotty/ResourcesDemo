@@ -53,6 +53,7 @@ public class LayerLevelActivity extends AppCompatActivity {
             }
         });
 
+
         Button mChangeLevelBtn =  findViewById(R.id.btn_change_level);
         mWifi =  findViewById(R.id.imv_wifi);
 
@@ -73,9 +74,13 @@ public class LayerLevelActivity extends AppCompatActivity {
         Drawable drawable = getDrawable( drawableIDs[currentid]);
         // 找到layer_drawable布局中需要更换的item，并替换成对应的图片
         layerDrawable.setDrawableByLayerId(R.id.layer_photo, drawable);
+        /*可替代赋值方法
+        layerDrawable.setId(1, 100);
+        layerDrawable.setDrawableByLayerId(100, drawable);
+        或者
+        layerDrawable.setDrawable(1, drawable);*/
         mPhoto.setImageDrawable(layerDrawable);
     }
-
 
     public void changeLevel() {
         // 获取替换的图片
@@ -87,5 +92,4 @@ public class LayerLevelActivity extends AppCompatActivity {
         LevelListDrawable levelListDrawable = (LevelListDrawable) mWifi.getDrawable();
         levelListDrawable.setLevel(currentlevel*5);*/
     }
-
 }

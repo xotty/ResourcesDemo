@@ -15,6 +15,6 @@
     <transition
         android:fromScene="@layout/scene_2_changetransform"
         android:toScene="@layout/scene_1_changetransform"
-        android:transition="@transition/my_changetransform" />
+        android:transition="@transition/my_changetransform"/>
 </transitionManager>
 

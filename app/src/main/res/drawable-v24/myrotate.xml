@@ -5,5 +5,5 @@
     android:pivotX="50%"
     android:pivotY="50%"
     android:visible="true"
-    android:duration="1000">
+    >
 </rotate>

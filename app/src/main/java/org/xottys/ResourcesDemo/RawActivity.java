@@ -90,6 +90,8 @@ public class RawActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
                 mPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
                 mPlayer.prepare();
                 mPlayer.start();
+                //视频播放
+                在上述音频播放基础增加surfaceView即可，不能使用VideoView播放
                 //网页加载
                 webView.loadUrl("file:///android_asset/html/index.html");
                 */
@@ -97,7 +99,7 @@ public class RawActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
 
         });
 
-        //res/raw资源使用
+        //res/raw音频播放
         findViewById(R.id.btn_raw_audio).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,8 +110,6 @@ public class RawActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
                     else {
                         try {
                             mediaPlayer.prepare();
-                        } catch (IllegalStateException e) {
-                            e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -133,23 +133,15 @@ public class RawActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
                     mediaPlayer.stop();
                     seekBar.setProgress(0);
                     timer.cancel();
-
                 }
-
-                /*文件读取
-                InputStream is = getResources().openRawResource(R.raw.file);
-                图片加载
-                BitmapFactory.decodeStream(getResources().openRawResource(R.raw.picture));
-                BitmapFactory.decodeResource(getResources(), R.raw.picture)
-                */
             }
         });
-
+        //res/raw视频播放
         findViewById(R.id.btn_raw_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //VideoView视频播放
-                final VideoView videoView = (VideoView) findViewById(R.id.vdv_sample);
+                final VideoView videoView =  findViewById(R.id.vdv_sample);
                 String uriString = "android.resource://" + getPackageName() + "/" + R.raw.samplevideo;
                 Uri uri = Uri.parse(uriString);
                 videoView.setVideoURI(uri);//为视频播放器设置视频路径
@@ -160,6 +152,14 @@ public class RawActivity extends AppCompatActivity implements SeekBar.OnSeekBarC
                         videoView.start();//开始播放视频
                     }
                 });
+                /*文件读取
+                InputStream is = getResources().openRawResource(R.raw.file);
+                图片加载
+                BitmapFactory.decodeStream(getResources().openRawResource(R.raw.picture));
+                BitmapFactory.decodeResource(getResources(), R.raw.picture)
+                网页加载
+                webView.loadUrl("file:///android_res/index.html");
+                */
             }
         });
     }
