@@ -76,6 +76,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -109,10 +111,9 @@ public class MainActivity extends AppCompatActivity {
         //加载Layout
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imv =  findViewById(R.id.imv);
-
+        imv =  (ImageView) findViewById(R.id.imv);
 
         LinearLayout lnlString=findViewById(R.id.lnl_string);
         TextView txvString=lnlString.findViewById(R.id.txv);
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
                 drawables[i] = getDrawable(typedArray.getResourceId(i ,R.drawable.wrapper_img1 ));
             } else {
-                drawables[i] = getResources().getDrawable(typedArray.getResourceId(i ,R.drawable.wrapper_img1 ),null);
+                drawables[i] = ContextCompat.getDrawable(this,typedArray.getResourceId(i ,R.drawable.wrapper_img1 ));
             }
         }
     }
@@ -148,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     //定义Menu Item点击响应事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -165,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
                 break;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
+//        return super.onOptionsItemSelected(item);
     }
 
     //res/valuse和res/xml资源的代码调用方法演示(xml引用方法见res/layout/activity_main.xml)
@@ -187,8 +190,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_color:
                 //字体颜色由xml中的ColorStateList控制，背景颜色在这里用代码控制
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    btn.setBackground(getResources().getDrawable(R.drawable.d_grey, null));
 
-                btn.setBackground(getResources().getDrawable(R.drawable.d_grey, null));
+                } else {
+                    btn.setBackground(ContextCompat.getDrawable(this,R.drawable.d_grey));
+
+                }
                 /*可替代实现方式
                    btn.setBackground(getDrawable(R.drawable.d_grey));
                    或者
@@ -259,8 +267,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.btn_font:
+                Typeface typeface;
                  //给Textview设置字体
-                 Typeface typeface = getResources().getFont(R.font.myfont);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                    typeface= getResources().getFont(R.font.myfont);
+                else
+                    typeface = ResourcesCompat.getFont(this, R.font.myfont);
+
                  ((Button)findViewById(R.id.btn_font)).setTypeface(typeface);
                  ((Button)findViewById(R.id.btn_font)).setText(R.string.font_text2);
                 break;

@@ -166,7 +166,6 @@ public class AnimatorActivity extends AppCompatActivity implements OnClickListen
         //启动动画
         anim.start();
 
-
     }
 
     private void RotateAnimation() {
