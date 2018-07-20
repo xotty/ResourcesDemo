@@ -44,6 +44,31 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/txv_fraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fraction:"
+                android:textSize="@dimen/text_size_normal" />
+
+            <Button
+                android:id="@+id/btn_fraction"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/d_blue"
+                android:onClick="clickButton"
+                android:text="@fraction/fraction_xml"
+                android:textAllCaps="false"
+                android:textColor="@color/my_colorstatelist"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
                 android:id="@+id/txv_bool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

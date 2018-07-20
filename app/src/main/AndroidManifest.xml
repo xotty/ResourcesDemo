@@ -8,11 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+       >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,43 +24,59 @@
         <activity
             android:name=".RawActivity"
             android:label="@string/title_activity_raw"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.DrawableMainActivity"
             android:theme="@style/AppTheme2"
-            android:label="@string/title_activity_drawable">
+            android:label="@string/title_activity_drawable"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".DrawableRes.SelectorActivity"
-            android:label="Selector:StateListDrawable"/>
+            android:label="Selector:StateListDrawable"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.MiscActivity"
-            android:label="Misc:Bitmap/NinePatch/Color"/>
+            android:label="Misc:Bitmap/NinePatch/Color"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.ShapeActivity"
-            android:label="Shape:GradientDrawable"/>
+            android:label="Shape:GradientDrawable"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.LayerLevelActivity"
-            android:label="LayerDrawable/LevelListDrawable"/>
+            android:label="LayerDrawable/LevelListDrawable"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.DrawableWrapperActivity"
-            android:label="DrawableWrapper"/>
+            android:label="DrawableWrapper"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.VectorActivity"
-            android:label="VectorDrawable"/>
+            android:label="VectorDrawable"
+            android:screenOrientation="portrait"/>
         <activity android:name=".DrawableRes.AnimationActivity"
-            android:label="Animation:xxxDrawable"/>
+            android:label="Animation:xxxDrawable"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".AnimRes.AnimMainActivity"
             android:theme="@style/AppTheme2"
-            android:label="Animation Resources"/>
+            android:label="Animation Resources"
+            android:screenOrientation="portrait"/>
 
 
         <activity android:name=".AnimRes.AnimActivity"
-            android:label="anim"/>
+            android:label="anim"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AnimRes.LayoutAnimActivity"
-            android:label="layoutAnimation/gridLayoutAnimation"/>
+            android:label="layoutAnimation/gridLayoutAnimation"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AnimRes.AnimatorActivity"
-            android:label="animator"/>
+            android:label="animator"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AnimRes.TransitionActivity"
-            android:label="transition"/>
+            android:label="transition"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AnimRes.TransitionDetailsActivity"
-            android:label="transition"/>
+            android:label="transition"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AnimRes.TransitionManagerActivity"
-            android:label="transitionManager"/>
+            android:label="transitionManager"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

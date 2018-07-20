@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         txvInteger.setText("Integer:");
         Button btnInteger=lnlInteger.findViewById(R.id.btn);
         btnInteger.setText(""+getResources().getInteger(R.integer.max_speed));
+
         btnInteger.setId(R.id.btn_integer);
 
         //将arrays.xml 中的drawable放入数组drawables
@@ -185,6 +186,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_integer:
                 ((Button) btn).setText("" + getResources().getInteger(R.integer.min_speed));
                 break;
+            case R.id.btn_fraction:
+                ((Button) btn).setText(""+(getResources().getFraction(R.fraction.fraction_code,1,1)));
+            break;
             case R.id.btn_bool:
                 ((Button) btn).setText("" + getResources().getBoolean(R.bool.bool_code));
                 break;

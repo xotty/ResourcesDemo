@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--这里可以是任何一种合乎语法的xml资源定义，混在一起不推荐使用-->
 <resources>
+    <string name="Hello">你好!</string>
+    <item type="string" name="Hi" >@string/Hello</item>
+
+    <item type="xml" name="xml_alias" >@xml/data</item>
+
     <color name="m_red">#a00</color>
     <color name="m_blue">#0000ff</color>
 
     <dimen name="m_margin">20dp</dimen>
 
-    <string name="m_stringl">My String </string>
+
+    <fraction  name="fraction_xml">20%</fraction>
+    <fraction  name="fraction_code">80%p</fraction>
+
+    <item type="bool" name="my_bool" >false</item>
+    <!--<bool name="my_bool">false</bool>-->
 </resources>
